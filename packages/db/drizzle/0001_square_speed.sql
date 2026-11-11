@@ -1,0 +1,1 @@
+ALTER TABLE "properties" ADD COLUMN "units_verified" boolean DEFAULT false NOT NULL;

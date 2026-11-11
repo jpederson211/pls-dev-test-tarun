@@ -22,6 +22,7 @@ export const PropertyRow = z.object({
   city: z.string(),
   zip: z.string(),
   units: z.number().nullable(),
+  unitsVerified: z.boolean(),
   tier: Tier.nullable(),
   ownerName: z.string().nullable(),
   lastTouchAt: z.string().nullable(),

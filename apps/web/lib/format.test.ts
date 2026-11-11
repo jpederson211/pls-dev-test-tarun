@@ -17,4 +17,10 @@ describe("formatUnits", () => {
   it("shows the number of units", () => {
     expect(formatUnits(12)).toBe("12");
   });
+  it("shows a check mark when units are verified", () => {
+    expect(formatUnits(12, true)).toBe("12 ✓");
+  });
+  it("shows a dash without a check mark when units are unknown", () => {
+    expect(formatUnits(null, true)).toBe("—");
+  });
 });

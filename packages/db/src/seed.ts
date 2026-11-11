@@ -62,6 +62,7 @@ async function main() {
           city: geo.city,
           zip: geo.zip,
           units: 4 + Math.floor(rand() * 40),
+          unitsVerified: i % 3 === 0,
           yearBuilt: 1910 + Math.floor(rand() * 70),
           tier: pick(["A", "B", "C", "D"]),
           ownerId: pick(ownerRows).id,

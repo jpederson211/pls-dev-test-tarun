@@ -8,6 +8,7 @@ const lastTouch = sql<Date | null>`(select max(${touches.happenedAt}) from ${tou
 
 function toRow(r: {
   id: string; apn: string; address: string; city: string; zip: string; units: number | null;
+  unitsVerified: boolean;
   tier: string | null; ownerName: string | null; lastTouchAt: Date | string | null;
 }): PropertyRow {
   return {
@@ -39,6 +40,7 @@ export function registerPropertyRoutes(app: FastifyInstance) {
         city: properties.city,
         zip: properties.zip,
         units: properties.units,
+        unitsVerified: properties.unitsVerified,
         tier: properties.tier,
         ownerName: owners.name,
         lastTouchAt: lastTouch,
@@ -69,6 +71,7 @@ export function registerPropertyRoutes(app: FastifyInstance) {
         city: properties.city,
         zip: properties.zip,
         units: properties.units,
+        unitsVerified: properties.unitsVerified,
         tier: properties.tier,
         ownerName: owners.name,
         lastTouchAt: lastTouch,
